@@ -52,11 +52,11 @@ WHERE user_id = '';
 
 UPDATE coder9.users
 SET
-	user_name = '全寸公',
+	user_name = 'hongdangmu',
 	user_email = 'hong@naver.com',
 	user_tel = '010-1234-5678',
 	user_gender = 'female',
-	user_address = '辑匡漂喊矫 己合备 己合悼'
+	user_address = 'seoul seongbuk'
 WHERE
 	user_id = 'myhong';
 
@@ -66,3 +66,25 @@ Error code: 1366
 SQL state: 22001
 */
 ALTER TABLE users convert to charset utf8;
+
+/*霸矫魄*/
+SELECT board_no, board_title, board_content, board_writer, board_view_count, board_likes, board_visible, board_registdate
+FROM coder9.board;
+
+SELECT board_no, board_title, board_content, board_writer, board_view_count, board_likes, board_visible, board_registdate
+FROM coder9.board
+WHERE board_no = 1;
+
+SELECT board_no, board_title, board_content, board_writer, board_view_count, board_likes, board_visible, board_registdate
+FROM coder9.board
+WHERE board_writer = 'shim';
+
+UPDATE coder9.board
+SET
+	board_title = 'Hi',
+	board_content = 'hi bro',
+	board_view_count = 1,
+	board_likes = 1,
+	board_visible = FALSE
+WHERE
+	board_no = 1;
