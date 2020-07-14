@@ -16,7 +16,9 @@ body, html {
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	
+	<%
+		User loginCheck = (User)session.getAttribute("loginUser");
+	%>
 	<div class="container d-flex h-100">
 		<div class="row align-self-center w-100">
 			<div class="col-4 mx-auto">

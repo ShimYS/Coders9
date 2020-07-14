@@ -1,3 +1,4 @@
+<%@page import="com.board.vo.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,6 +13,9 @@
 </head>
 <body>
 <div class="container">
+	<%
+		User userLoginCheck = (User)session.getAttribute("loginUser");
+	%>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
 		<div class="container">
 			<a class="navbar-brand" href="#">Coders9</a>
@@ -31,17 +35,25 @@
 					<li class="nav-item">
 						<a class="nav-link" href="board.jsp">Board</a>
 					</li>
+					<%
+						if(userLoginCheck == null) {
+					%>
 					<li class="nav-item">
 						<a class="nav-link" href="">SignIn</a>
 					</li>
-					
+					<%
+						} else {
+					%>
 					<!-- 모달기능 추가해야함 (profile, sign out) -->
 					<li class="nav-item">
-						<a class="nav-link" href="#" onclick="">
+						<a class="nav-link" href="userinfo.jsp" onclick="">
 							<img class="img-circle" alt="" style="width: 30px; height: 30px;"
 							src="https://c.wallhere.com/photos/fb/3d/1920x1080_px_Album_Covers_Led_Zeppelin_music-1402973.jpg!d">
 						</a>
 					</li>
+					<%
+						}
+					%>
 				</ul>
 			</div>
 		</div>

@@ -77,18 +77,22 @@ body, html {
 							<div class="row ml-2" id="pf-hd-row-box">
 								<div class="col-9">
 									<div class="row mt-2">
-										<div class="col-3">
-											프로필사진											
-										</div>
-										<div class="col-9">
-											<div class="row">
-												<div class="col-12">
-													이름(별명?)
+										
+											<div class="col-3 pl-4" data-toggle="popover" data-placement="top" title="Mr Hong" data-content="Hi bro~ welcome to my profile!">
+												<img alt="" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" width="130px" height="130px">										
+											</div>
+										
+										<div class="col-9 ml-0 pl-0 mt-2">
+											<div class="row" style="height: 7vh; font-size: 25px; ">
+												<div class="col-12 font-italic">
+													<p><strong>Hong Dang Mu</strong></p>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-12">
-													post 0 followers 0 following 0
+												<div class="col-12" style="font-size: 20px;">
+													<span class="mr-4"><strong>post</strong> 0 </span>
+													<span class="mr-4"><strong>followers</strong> 0 </span>
+													<span class="mr-4"><strong>following</strong> 0 </span>
 												</div>
 											</div>
 										</div>
@@ -285,13 +289,14 @@ body, html {
 							</div>
 							
 							<!-- 프로필 메뉴바 -->
-							<div class="row ml-2 mb-2">
+							<div class="row ml-2">
 								<div class="col-12">
-									<ul class="list-group list-group-horizontal">
-										<li class="list-group-item">First item</li>
-										<li class="list-group-item">Second item</li>
-										<li class="list-group-item">Third item</li>
-										<li class="list-group-item">Fourth item</li>
+									<ul class="nav" >
+										<li class="nav-item"><a class="nav-link" href="#" style="color: black; 
+										font-weight: bold; border-bottom: 3px solid mediumseagreen;" onkeyup="activeMenuColor()">myBoard</a></li>
+										<li class="nav-item"><a class="nav-link" href="#" style="color: black;" onkeyup="activeMenuColor()">myReview</a></li>
+										<li class="nav-item"><a class="nav-link" href="#" style="color: black;" onkeyup="activeMenuColor()">badges</a></li>
+										<li class="nav-item"><a class="nav-link" href="#" style="color: black;" onkeyup="activeMenuColor()">scrap</a></li>
 									</ul>
 								</div>
 							</div>
@@ -319,7 +324,11 @@ body, html {
 	</div>
 	
 	<script type="text/javascript">
-		
+
+		$(document).ready(function(){
+		  $('[data-toggle="popover"]').popover();
+		});
+	
 	</script>
 </body>
 </html>
