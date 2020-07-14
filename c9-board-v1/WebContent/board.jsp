@@ -19,42 +19,52 @@
 		}
 		#board-body-table {
 			width: 100%;
-			height: auto;
+
 		}
 	</style>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
 	
-	<div class="container d-flex h-100">
-		<div class="row align-self-center  w-100" id="board-body-table">
-			<div class="col-8 mx-auto">
-				<table class="table text-center">
-					<thead class="thead-dark">
+	<div class="container d-flex float" style="margin-top: 5%;">
+		<div class="row w-100" id="board-body-table">
+			<div class="col-12 ">
+				<table id="board-list" class="table text-center">
+					<colgroup>
+						<col width="8%">
+						<col width="10%">
+						<col width="41%">
+						<col width="10%">
+						<col width="15%">
+						<col width="8%">
+						<col width="8%">
+					</colgroup>
+					<thead >
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">제목</th>
-							<th scope="col">작성자</th>
-							<th scope="col">내용</th>
-							<th scope="col">좋아요</th>
-							<th scope="col">등록일</th>
+							<th>번호</th>
+							<th>제목</th>
+							<th>내용</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조회수</th>
+							<th>좋아요</th>
 						</tr>
 					</thead>
 					<tbody>
 					<%
 						BoardDao boardDao = new BoardDao();
 						List<Board> boards = boardDao.getAllBoards();
+						
+						for(int i=0; i<boards.size(); i++) {
 					%>
-					<%
-						for(int i=0; i<boards.size(); i++){
-					%>
-						<tr>
-							<th scope="row"><%=boards.get(i).getNo() %></th>
+						<tr class="font-weight-bold">
+							<td><%=boards.get(i).getNo() %></td>
 							<td><%=boards.get(i).getTitle() %></td>
-							<td><%=boards.get(i).getWriter() %></td>
 							<td><%=boards.get(i).getContent() %></td>
-							<td><%=boards.get(i).getLikes() %></td>
+							<td><%=boards.get(i).getWriter() %></td>
 							<td><%=boards.get(i).getRegistDate() %></td>
+							<td><%=boards.get(i).getViewCount() %></td>
+							<td><%=boards.get(i).getLikes() %></td>
 						</tr>
 					<%
 						}

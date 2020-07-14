@@ -49,7 +49,7 @@ body, html {
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<div class="container">
+	<div class="container" style="margin-top: 4%;">
 		<!-- 유저프로필 커버사진 -->
 		<header class="masthead">
 			<div class="container h-100">
@@ -67,7 +67,7 @@ body, html {
 		</header>
 		
 		<!-- 유저프로필 메인 -->
-		<section class=" mt-1 p-0">
+		<section class=" mt-2 p-0">
 			<div class="container h-100">
 				
 				<!-- 유저프로필 헤더 -->
@@ -287,7 +287,12 @@ body, html {
 							<!-- 프로필 메뉴바 -->
 							<div class="row ml-2 mb-2">
 								<div class="col-12">
-									Post Portfolio Badges 
+									<ul class="list-group list-group-horizontal">
+										<li class="list-group-item">First item</li>
+										<li class="list-group-item">Second item</li>
+										<li class="list-group-item">Third item</li>
+										<li class="list-group-item">Fourth item</li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -297,13 +302,13 @@ body, html {
 				<!-- 유저프로필 메뉴, 컨텐츠 -->
 				<div class="row">
 					<!-- 좌측 사이드 메뉴 -->
-					<div class="col-3 p-0 mt-1" >
+					<div class="col-3 p-0 mt-2" >
 						<div class="card" id="profile-sidemenu">
 							
 						</div>
 					</div>
 					<!-- 컨텐츠 -->
-					<div class="col-9 pt-0 pr-0 pb-0 pl-1 mt-1">
+					<div class="col-9 pt-0 pr-0 pb-0 pl-1 mt-2">
 						<div class="card" id="profile-contents">
 							
 						</div>

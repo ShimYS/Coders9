@@ -21,7 +21,7 @@ public class BoardDao {
 		board.setViewCount(rs.getInt("board_view_count"));
 		board.setLikes(rs.getInt("board_likes"));
 		board.setVisible(rs.getBoolean("board_visible"));
-		board.setRegistDate(rs.getDate("board_regostDate"));
+		board.setRegistDate(rs.getDate("board_registDate"));
 		
 		return board;
 	}

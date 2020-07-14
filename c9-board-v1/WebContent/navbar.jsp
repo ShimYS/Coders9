@@ -29,7 +29,7 @@
 						<a class="nav-link" href="#">Post</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Board</a>
+						<a class="nav-link" href="board.jsp">Board</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="">SignIn</a>
