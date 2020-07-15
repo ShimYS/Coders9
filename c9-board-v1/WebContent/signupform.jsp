@@ -38,7 +38,7 @@
 						<div class="form-group mb-1">
 							<div class="input-group input-group-lg">
 								<input type="text" class="form-control" placeholder="ID" id="form-input-id"
-									aria-label="Username" aria-describedby="basic-addon1" name="id" onkeyup="checkId()">
+									aria-label="Username" aria-describedby="basic-addon1" name="id" onkeyup="checkId()" autocomplete="off">
 							</div>
 							<span id="form-check-id" style="display: inline-block; color: red; font-weight: bold;"></span>
 						</div>

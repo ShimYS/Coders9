@@ -54,7 +54,7 @@
 		</div>
 		<div class="row w-100" id="board-body-table">
 			<div class="col-12 ">
-				<table id="board-list" class="table text-center">
+				<table id="board-list" class="table text-center table-hover">
 					<colgroup>
 						<col width="8%">
 						<col width="10%">
@@ -82,7 +82,7 @@
 						
 						for(int i=0; i<boards.size(); i++) {
 					%>
-						<tr class="font-weight-bold">
+						<tr class="font-weight-bold" onclick="showDetailBoard(<%=boards.get(i).getNo() %>)">
 							<td><%=boards.get(i).getNo() %></td>
 							<td><%=boards.get(i).getTitle() %></td>
 							<td><%=boards.get(i).getContent() %></td>
@@ -99,5 +99,10 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function showDetailBoard(boardNo) {
+			alert(boardNo);
+		}
+	</script>
 </body>
 </html>

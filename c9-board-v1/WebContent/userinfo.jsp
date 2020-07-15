@@ -65,19 +65,17 @@ body, html {
 				</div>
 			</div>
 		</header>
-		
 		<!-- 유저프로필 메인 -->
 		<section class=" mt-2 p-0">
 			<div class="container h-100">
-				
 				<!-- 유저프로필 헤더 -->
 				<div class="row h-100">
 					<div class="col-12 p-0">
 						<div class="card" id="profile-header">
+						
 							<div class="row ml-2" id="pf-hd-row-box">
 								<div class="col-9">
 									<div class="row mt-2">
-										
 											<div class="col-3 pl-4" data-toggle="popover" data-placement="top" title="Mr Hong" data-content="Hi bro~ welcome to my profile!">
 												<img alt="" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" width="130px" height="130px">										
 											</div>
@@ -269,25 +267,9 @@ body, html {
 										<a class="col-3 text-right" type="button">
 											<i class="fas fa-cog mr-3"></i>									
 										</a>
-										<!-- 
-										<div class="dropdown">
-
-											
-												<button type="button"
-													class="btn btn-primary dropdown-toggle"
-													data-toggle="dropdown">Sony</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" href="#">Tablet</a> <a
-														class="dropdown-item" href="#">Smartphone</a>
-												</div>
-											
-										</div>
-										 -->	
-
 									</div>
 								</div>
 							</div>
-							
 							<!-- 프로필 메뉴바 -->
 							<div class="row ml-2">
 								<div class="col-12">
@@ -300,6 +282,7 @@ body, html {
 									</ul>
 								</div>
 							</div>
+							
 						</div>
 					</div>
 				</div>
