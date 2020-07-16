@@ -23,9 +23,17 @@ CREATE TABLE BOARD (
 	board_visible BOOLEAN DEFAULT TRUE,
 	board_registdate DATETIME DEFAULT SYSDATE()
 );
+CREATE TABLE PHOTO (
+	photo_no INT PRIMARY KEY AUTO_INCREMENT,
+	photo_cover VARCHAR(500),
+	photo_profile VARCHAR(500),
+	user_id VARCHAR(20) NOT NULL
+);
 /*포레인키설정*/
 ALTER TABLE board
 ADD FOREIGN KEY (board_writer) REFERENCES users(user_id);
+ALTER TABLE photo
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 /*조회명령어*/
 select * 
 from users;

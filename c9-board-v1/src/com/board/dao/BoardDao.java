@@ -30,18 +30,25 @@ public class BoardDao {
 		Board board = null;
 		
 		Connection connection = ConnectionUtil.getConnection();
-		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.getBoardById"));
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.getBoardByNo"));
 		pstmt.setInt(1, boardNo);
 		ResultSet rs = pstmt.executeQuery();
 		
 		if(rs.next()) {
 			board = new Board();
-			resultsetToBoard(rs);
+			board = resultsetToBoard(rs);
 		}
 		
 		rs.close();
 		pstmt.close();
 		connection.close();
+		
+		System.out.println(board.getTitle());
+		System.out.println(board.getWriter());
+		System.out.println(board.getRegistDate());
+		System.out.println(board.getViewCount());
+		System.out.println(board.getLikes());
+		System.out.println(board.getNo());
 		
 		return board;
 	}
@@ -56,7 +63,7 @@ public class BoardDao {
 		
 		if(rs.next()) {
 			board = new Board();
-			resultsetToBoard(rs);
+			board = resultsetToBoard(rs);
 		}
 		
 		rs.close();

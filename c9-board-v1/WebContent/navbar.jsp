@@ -30,9 +30,6 @@
 						<a class="nav-link" href="home.jsp">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Post</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="board.jsp">Board</a>
 					</li>
 					<%
