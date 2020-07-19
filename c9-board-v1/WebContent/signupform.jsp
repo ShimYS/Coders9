@@ -17,6 +17,11 @@
 </style>
 </head>
 <body>
+<%
+	String position = "sign";
+%>
+	<%@ include file="navbar.jsp"%>
+	
 <div class="container d-flex h-100">
 		<div class="row align-self-center w-100">
 			<div class="col-4 mx-auto">

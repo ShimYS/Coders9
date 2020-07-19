@@ -18,7 +18,7 @@
 	%>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">Coders9</a>
+			<a class="navbar-brand" href="home.jsp">Coders9</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -26,31 +26,37 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="home.jsp">Home</a>
+					<li class="nav-item">
+						<a class="nav-link <%="home".equals(position) ? "font-weight-bold" : "" %>" href="home.jsp" >Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="board.jsp">Board</a>
+						<a class="nav-link <%="board".equals(position) ? "font-weight-bold" : "" %>" href="board.jsp" >Board</a>
 					</li>
 					<%
 						if(userLoginCheck == null) {
 					%>
-					<li class="nav-item">
-						<a class="nav-link" href="">SignIn</a>
-					</li>
+						<li class="nav-item">
+							<a class="nav-link <%="sign".equals(position) ? "font-weight-bold" : "" %>" href="home.jsp">SignIn</a>
+						</li>
 					<%
 						} else {
 					%>
-					<!-- 모달기능 추가해야함 (profile, sign out) -->
+						<li class="nav-item">
+							<a class="nav-link <%="sign".equals(position) ? "font-weight-bold" : "" %>" href="logout.jsp">SignOut</a>
+						</li>
+					<%
+						}
+					%>
+					<!-- 모달기능 추가해야함 (profile, sign out) 
 					<li class="nav-item">
 						<a class="nav-link" href="userinfo.jsp" onclick="">
 							<img class="img-circle" alt="" style="width: 30px; height: 30px;"
 							src="https://c.wallhere.com/photos/fb/3d/1920x1080_px_Album_Covers_Led_Zeppelin_music-1402973.jpg!d">
 						</a>
 					</li>
-					<%
-						}
-					%>
+					-->
+					
+					
 				</ul>
 			</div>
 		</div>

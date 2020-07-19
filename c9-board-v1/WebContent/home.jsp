@@ -15,7 +15,12 @@ body, html {
 </style>
 </head>
 <body>
+<%
+	String position = "home";
+%>
+
 	<%@ include file="navbar.jsp"%>
+	
 	<%
 		User loginCheck = (User)session.getAttribute("loginUser");
 	%>
@@ -72,10 +77,6 @@ body, html {
 						Don't have an account? <a href="signupform.jsp"
 							style="font-weight: bold; color: black;">Sign up</a>
 					</p>
-					<%
-						String i = request.getParameter("id");
-						String p = request.getParameter("password");
-					%>					
 				</div>
 			</div>
 		</div>

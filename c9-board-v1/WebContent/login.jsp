@@ -24,5 +24,5 @@
 	session.setAttribute("userId", savedUser.getId());
 	
 	// userinfo 리다이렉트
-	response.sendRedirect("userinfo.jsp");
+	response.sendRedirect("board.jsp");
 %>

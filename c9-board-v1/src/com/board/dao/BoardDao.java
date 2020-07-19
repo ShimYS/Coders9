@@ -43,13 +43,6 @@ public class BoardDao {
 		pstmt.close();
 		connection.close();
 		
-		System.out.println(board.getTitle());
-		System.out.println(board.getWriter());
-		System.out.println(board.getRegistDate());
-		System.out.println(board.getViewCount());
-		System.out.println(board.getLikes());
-		System.out.println(board.getNo());
-		
 		return board;
 	}
 	
@@ -97,6 +90,7 @@ public class BoardDao {
 	public void insertBoard(Board board) throws Exception {
 		Connection connection = ConnectionUtil.getConnection();
 		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.insertBoard"));
+		
 		pstmt.setString(1, board.getTitle());
 		pstmt.setString(2, board.getContent());
 		pstmt.setString(3, board.getWriter());
@@ -115,6 +109,39 @@ public class BoardDao {
 		pstmt.setInt(4, board.getLikes());
 		pstmt.setBoolean(5, board.isVisible());
 		pstmt.setInt(6, board.getNo());
+		pstmt.executeUpdate();
+		
+		pstmt.close();
+		connection.close();
+	}
+	
+	public void updateBoardViewCnt(int boardNo, int cnt) throws Exception {
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.updateBoardViewCnt"));
+
+		pstmt.setInt(1, cnt);
+		pstmt.setInt(2, boardNo);
+		pstmt.executeUpdate();
+		
+		pstmt.close();
+		connection.close();
+	}
+	public void updateBoardLikes(int boardNo, int likes) throws Exception {
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.updateBoardViewCnt"));
+		
+		pstmt.setInt(1, likes);
+		pstmt.setInt(2, boardNo);
+		pstmt.executeUpdate();
+		
+		pstmt.close();
+		connection.close();
+	}
+	
+	public void removeBoardByNo(int boardNo) throws Exception {
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("board.updateBoardViewCnt"));
+		pstmt.setInt(1, boardNo);
 		pstmt.executeUpdate();
 		
 		pstmt.close();

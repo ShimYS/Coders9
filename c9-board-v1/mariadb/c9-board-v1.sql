@@ -54,6 +54,9 @@ VALUES ('park', 'zxcv1234');
 INSERT INTO board (board_title, board_content, board_writer)
 VALUES ('Hi', 'hi bro', 'shim');
 
+INSERT INTO board (board_title, board_content, board_writer) \
+				  VALUES (?, ?, ?) 
+
 SELECT user_no, user_id, user_password, user_name, user_email, user_tel, user_gender, user_address, user_point, user_registdate 
 FROM coder9.users
 WHERE user_id = '';
@@ -96,3 +99,10 @@ SET
 	board_visible = FALSE
 WHERE
 	board_no = 1;
+	
+
+UPDATE coder9.board 
+SET 
+     board_view_count = 1
+WHERE 
+     board_no = 7;
