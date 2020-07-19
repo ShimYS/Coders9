@@ -5,16 +5,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-
-	int boardNo =NumberUtil.stringToInt(request.getParameter("boardno"));
+	
+	int boardNo = NumberUtil.stringToInt(request.getParameter("boardno"));
 	
 	BoardDao boardDao = new BoardDao();
-	boardDao.removeBoardByNo(boardNo);
-	
 	Board board = boardDao.getBoardByNo(boardNo);
 	
+	int likes = board.getLikes() + 1;
+	
+	boardDao.updateBoardLikes(boardNo, likes);
+	
+	Board resultBoard = boardDao.getBoardByNo(boardNo);
+	
 	Gson gson = new Gson();
-	String jsonText = gson.toJson(board);
+	String jsonText = gson.toJson(resultBoard);
 	
 	out.write(jsonText);
 %>

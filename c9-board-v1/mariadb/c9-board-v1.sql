@@ -79,6 +79,13 @@ SQL state: 22001
 ALTER TABLE users convert to charset utf8;
 
 /*°Ô½ÃÆÇ*/
+SELECT * 
+FROM coder9.board A
+RIGHT JOIN (SELECT board_no, ROW_NUMBER() OVER (ORDER BY board_no desc) AS row_num
+	  		FROM coder9.board) B
+ON A.board_no = B.board_no
+where row_num BETWEEN 1 AND 5;
+
 SELECT board_no, board_title, board_content, board_writer, board_view_count, board_likes, board_visible, board_registdate
 FROM coder9.board;
 

@@ -10,7 +10,7 @@ public class Board {
 	private String writer;
 	private int viewCount;
 	private int likes;
-	private boolean visible;
+	private String visible;
 	private Date registDate;
 	
 	public Board () {}
@@ -63,11 +63,11 @@ public class Board {
 		this.likes = likes;
 	}
 
-	public boolean isVisible() {
+	public String getVisible() {
 		return visible;
 	}
 
-	public void setVisible(boolean visible) {
+	public void setVisible(String visible) {
 		this.visible = visible;
 	}
 
