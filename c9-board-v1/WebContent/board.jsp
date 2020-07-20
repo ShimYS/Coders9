@@ -90,7 +90,7 @@ body, html {
 											</div>
 										</div>
 										<div class="col-5">
-											<button class="btn btn-primary" type="submit">search</button>										
+											<button class="btn btn-outline-dark" type="submit">search</button>										
 										</div>
 									</div>
 								</form>
@@ -105,8 +105,8 @@ body, html {
 						
 						-->
 					</div>
-					<div class="card-body">
-						<table id="board-list" class="table text-center table-hover">
+					<div class="card-body p-0">
+						<table id="board-list" class="table text-center table-hover p-0 mb-0">
 							<colgroup>
 								<col width="8%">
 								<col width="10%">
@@ -209,6 +209,13 @@ body, html {
 										}
 									}
 								%>
+								
+								<tr>
+									<td colspan='7' class="p-1">
+										<button class="btn btn-outline-dark btn-block float-right" id="btn-add-todo-form" data-toggle="modal" data-target="#modal-board-form">New</button>
+									</td>
+								</tr>
+							
 							</tbody>
 						</table>
 					</div>
@@ -238,7 +245,7 @@ body, html {
 								if (pageNo > 1) {
 							%>
 							<li class="page-item "><a class="page-link"
-								href="board.jsp?page=<%=pageNo - 1%>">이전</a></li>
+								href="board.jsp?page=<%=pageNo - 1%>&rowsperpage=<%=rowsPerPage %>" style="color: black;">이전</a></li>
 							<%
 								}
 								for (int num = beginPageNo; num <= endPageNo; num++) {
@@ -247,13 +254,13 @@ body, html {
 									}
 							%>
 									<li class="page-item <%=pageNo == num ? "active" : ""%> "><a
-										class="page-link" href="board.jsp?page=<%=num%>"><%=num%></a></li>
+										class="page-link" href="board.jsp?page=<%=num%>&rowsperpage=<%=rowsPerPage %>" style="color: black;"><%=num%></a></li>
 							<%
 								}
 								if (pageNo < totalPages) {
 							%>
 							<li class="page-item"><a class="page-link"
-								href="board.jsp?page=<%=pageNo + 1%>">다음</a></li>
+								href="board.jsp?page=<%=pageNo + 1%>&rowsperpage=<%=rowsPerPage %>" style="color: black;">다음</a></li>
 							<%
 								}
 							%>
